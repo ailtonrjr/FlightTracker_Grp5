@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlightTrackerTemp.Flights"
+             Title="Flights">
+    <ScrollView >
+        <Grid  BackgroundColor="White"  ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="*" ></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Home_button" CornerRadius="0" Grid.Column="0" Grid.Row="0" BackgroundColor="#4169E1" Text="HOME" Clicked="Home_button_Clicked" FontAttributes="Bold" ></Button>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="#4169E1" Spacing="20">
+                <Button x:Name="Flight_button" CornerRadius="0"  BackgroundColor="#4169E1"  Text="Flights"  ></Button>
+                <Button x:Name="Search_button" CornerRadius="0"   BackgroundColor="#4169E1" Text="Search"  Clicked="Search_button_Clicked"></Button>
+
+            </VerticalStackLayout>
+            <Label  Grid.Row="2" Grid.Column="0" BackgroundColor="#4169E1"></Label>
+
+            <Label TextColor="Black" Grid.Row="0" Grid.Column="1" Text="Flight Finder" HorizontalOptions="Center" FontSize="Large"></Label>
+            <HorizontalStackLayout Grid.Column="1" Grid.Row="1" Spacing="70">
+                <VerticalStackLayout>
+                    <Label 
+                        TextColor="Black" 
+                        Text="From"></Label>
+                    <Border Stroke="#3B444B">
+                        <Entry 
+                        x:Name="FromEntry"
+                        WidthRequest="200"
+                        TextColor="Black" 
+                        Placeholder="Any"
+                        ></Entry>
+                    </Border>
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label TextColor="Black" Text="To:"></Label>
+                    <Border Stroke="#3B444B">
+                        <Entry x:Name="ToEntry" 
+                               WidthRequest="200" 
+                               TextColor="Black" 
+                               Placeholder="Any"
+                               ></Entry>
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Label TextColor="Black" Text="Day:"></Label>
+                    <Border Stroke="#3B444B">
+                        <Entry x:Name="DayEntry" 
+                               WidthRequest="200" 
+                               TextColor="Black" 
+                               Placeholder="Any"
+                               ></Entry>
+                    </Border>
+                </VerticalStackLayout>
+
+                <Button x:Name="FindFlightBtn"
+                    Text="Find Flights" 
+                    Margin="0,0,0,20"
+                    HeightRequest="10" 
+                    WidthRequest="150" 
+                    BackgroundColor="#4169E1"
+                    Clicked="FindFlightBtn_Clicked"
+                ></Button>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Margin="0,40,10,0" Grid.Row="2" Grid.Column="1">
+                <Label Text="Flights" TextColor="Black" HorizontalOptions="Center" FontSize="Large"></Label>
+                <Border Stroke="#3B444B">
+                    <Picker 
+                        x:Name="MyPicker" 
+                        HeightRequest="20" 
+                        TextColor="Black" SelectedIndexChanged="MyPicker_SelectedIndexChanged" ></Picker>
+
+                </Border>
+
+                <Label Margin="0,40,0,0" Text="Reserve" TextColor="Black" HorizontalOptions="Center" FontSize="Large"></Label>
+
+                <Label Text="Flight Code:" TextColor="Black"></Label>
+                <Border Stroke="#3B444B">
+                    <Entry x:Name="CodeEntry" TextColor="Black" HeightRequest="20" Text="{Binding CodeEntry}"></Entry>
+                </Border>
+
+                <Label Text="Airline:" TextColor="Black"></Label>
+                <Border Stroke="#3B444B">
+                    <Entry x:Name="AirlineEntry" TextColor="Black" HeightRequest="20" Text="{Binding AirlineEntry}"></Entry>
+                </Border>
+
+                <Label Text="Day:" TextColor="Black"></Label>
+                <Border Stroke="#3B444B">
+                    <Entry x:Name="DayEntry1" TextColor="Black" HeightRequest="20" Text="{Binding DayEntry}"></Entry>
+                </Border>
+
+                <Label Text="Time:" TextColor="Black"></Label>
+                <Border Stroke="#3B444B">
+                    <Entry x:Name="TimeEntry" TextColor="Black" HeightRequest="20" Text="{Binding TimeEntry}"></Entry>
+                </Border>
+
+                <Label Text="Cost:" TextColor="Black"></Label>
+                <Border Stroke="#3B444B">
+                    <Entry x:Name="CostEntry" TextColor="Black" HeightRequest="20" Text="{Binding CostEntry}"></Entry>
+                </Border>
+
+                <Label Text="Name:" TextColor="Black"></Label>
+                <Border Stroke="#3B444B">
+                    <Entry x:Name="NameEntry" TextColor="Black" HeightRequest="20" Text="{Binding NameEntry}"></Entry>
+                </Border>
+
+                <Label Text="Citizenship:" TextColor="Black"></Label>
+                <Border Stroke="#3B444B">
+                    <Entry x:Name="CitizenshipEntry" TextColor="Black" HeightRequest="20" Text="{Binding CitizenshipEntry}"></Entry>
+                </Border>
+
+                <Button x:Name="ReserveButton" Margin="0,10,0,10" BackgroundColor="#4169E1" WidthRequest="300" Text="reserve" HorizontalOptions="Center" Clicked="ReserveButton_Clicked"></Button>
+
+                <Label Text="Reservation Code" TextColor="Black" HorizontalTextAlignment="Center"></Label>
+
+                <Frame Padding="10"
+                       BackgroundColor="LightGray"
+                       WidthRequest="150">
+                    
+                    <Label x:Name="ReservationCode" HorizontalOptions="Center" TextColor="Black" Text="{Binding ReservationCode}" FontAttributes="Bold"></Label>
+                </Frame>    
+                    
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

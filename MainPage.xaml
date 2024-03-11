@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlightTrackerTemp.MainPage">
+    <ScrollView>
+        <Grid  BackgroundColor="White">
+            <Grid.RowDefinitions >
+                <RowDefinition  Height="*" ></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Home_button" CornerRadius="0" Grid.Row="0" Grid.Column="0" BackgroundColor="#4169E1" Text="Home"  ></Button>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="#4169E1" Spacing="20">
+                <Button x:Name="Flight_button" CornerRadius="0"  BackgroundColor="#4169E1"  Text="Flights" Clicked="Flight_button_Clicked" ></Button>
+                <Button x:Name="Search_button" CornerRadius="0"   BackgroundColor="#4169E1" Text="Search"  Clicked="Search_button_Clicked"></Button>
+
+            </VerticalStackLayout>
+            <Label  Grid.Row="2" Grid.Column="0" BackgroundColor="#4169E1"></Label>
+            <Label Padding="10" Grid.Row="0" Grid.Column="1" Text="Welcome To Traveless" TextColor="Black" FontSize="Header"></Label>
+            <Label Padding="10,0,0,0" Grid.Row="1" Grid.Column="1" Text="Welcome To Our new app" TextColor="Black" FontSize="Small"></Label>
+
+
+        </Grid>
+
+
+    </ScrollView>
+
+</ContentPage>
